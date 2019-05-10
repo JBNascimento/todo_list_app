@@ -31,6 +31,13 @@
     </tbody>
 </table>
 
+<h1>Listas Favoritas</h1>
+
+<% current_user.favorites.each do |favorite| %>
+  <%= link_to favorite.todo_list.title, favorite.todo_list %>  
+<% end %>
+
+
 <br>
 
 <%= link_to 'Criar Nova Lista', new_todo_list_path %>

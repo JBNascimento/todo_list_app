@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'favorites/update'
   devise_for :users
   resources :todo_lists do
     resources :todo_items  do

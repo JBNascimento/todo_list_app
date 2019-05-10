@@ -10,6 +10,8 @@
   <%= @todo_list.description %>
 </p>
 
+<%= link_to favorite_text, favorites_update_path(todo_list: @todo_list), id:'favorite_link', remote: true %>  
+
 <div id="todo_items_wrapper">
   <%= render @todo_list.todo_items %>
   <div id="form">

@@ -19,12 +19,13 @@
             <div class="todo_item">
                 <p><%= todo_item.content %></p>
             </div>
-            <div class="complete">
-                <%= link_to "Marcar como concluído", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
-            </div>
-            <div class="trash">
-                <%= link_to "Deletar", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Você tem certeza que deseja excluir?"} %>
-            </div>
-
+            <% if todo_item.todo_list.user == current_user %>
+                <div class="complete">
+                    <%= link_to "Marcar como concluído", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+                </div>
+                <div class="trash">
+                    <%= link_to "Deletar", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Você tem certeza que deseja excluir?"} %>
+                </div>
+            <% end %>
         <% end %>
 </div>

@@ -10,6 +10,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists/1
   # GET /todo_lists/1.json
   def show
+    @favorite_exists = Favorite.where(todo_list: @todo_list, user: current_user) == [] ? false : true
   end
 
   # GET /todo_lists/new
