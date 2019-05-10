@@ -7,6 +7,7 @@
     <tr>
       <th>Título</th>
       <th>Descrição</th>
+      <th>Autor </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +17,14 @@
       <tr>
         <td><%= todo_list.title %></td>
         <td><%= todo_list.description %></td>
+        <td><%= todo_list.user.email %></td>
         <td><%= link_to 'Exibir', todo_list %></td>
-        <td><%= link_to 'Editar', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Deletar', todo_list, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-      </tr>
+        
+        <% if todo_list == current_user %>
+          <td><%= link_to 'Editar', edit_todo_list_path(todo_list) %></td>
+          <td><%= link_to 'Deletar', todo_list, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <% end %>
+        </tr>
     <% end %>
   </tbody>
 </table>
