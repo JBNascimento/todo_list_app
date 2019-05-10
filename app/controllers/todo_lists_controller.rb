@@ -28,7 +28,7 @@ class TodoListsController < ApplicationController
 
     respond_to do |format|
       if @todo_list.save
-        format.html { redirect_to @todo_list, notice: 'Todo list was successfully created.' }
+        format.html { redirect_to @todo_list, notice: 'A lista de tarefas foi criada com sucesso!' }
         format.json { render :show, status: :created, location: @todo_list }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TodoListsController < ApplicationController
   def update
     respond_to do |format|
       if @todo_list.update(todo_list_params)
-        format.html { redirect_to @todo_list, notice: 'Todo list was successfully updated.' }
+        format.html { redirect_to @todo_list, notice: 'A lista de terefas foi atualizada com sucesso!' }
         format.json { render :show, status: :ok, location: @todo_list }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TodoListsController < ApplicationController
   def destroy
     @todo_list.destroy
     respond_to do |format|
-      format.html { redirect_to todo_lists_url, notice: 'Todo list was successfully destroyed.' }
+      format.html { redirect_to todo_lists_url, notice: 'A lista de tarefas foi removida com sucesso!' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class TodoListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
-      params.require(:todo_list).permit(:title, :description)
+      params.require(:todo_list).permit(:title, :description,:is_private)
     end
 end

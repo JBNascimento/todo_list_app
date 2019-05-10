@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @todo_list.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @todo_list.description %>
 </p>
 
@@ -16,5 +16,7 @@
     <%= render "todo_items/form" %>
   </div>
 </div>
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Back', todo_lists_path %>
+<% if @todo_list.user == current_user %>
+  <%= link_to 'Editar', edit_todo_list_path(@todo_list) %> 
+<% end %>
+<%= link_to 'Voltar', todo_lists_path %>
