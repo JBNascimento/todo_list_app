@@ -17,9 +17,10 @@ class TodoItemsController < ApplicationController
     end
 
     def complete
-        @todo_item.update_attribute(:completed_at, Time.now)
+        @todo_item.toggle_for_complete_state
         redirect_to @todo_list, notice: "Tarefa concluída!"
     end
+
 
     private
     def set_todo_list
