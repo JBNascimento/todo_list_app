@@ -15,4 +15,144 @@
  */
 
  @import "bootstrap";
- 
+ @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
+ body {
+    font-family: 'Quicksand', sans-serif;
+ }
+ a:hover {
+    background-color: transparent;
+    color:#666666;
+ }
+/* Devise Forms */
+
+.forms-in{
+    background-color:#ffb302;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+ }
+
+ .form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+  }
+  
+
+  .form-control:focus {
+    border-color: #495057;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+  }
+
+
+  .form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-label-group > input,
+  .form-label-group > label {
+    height: 3.125rem;
+    padding: .75rem;
+  }
+  
+  .form-label-group > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0; /* Override default `<label>` margin */
+    line-height: 1.5;
+    color: #495057;
+    pointer-events: none;
+    cursor: text; /* Match the input under the label */
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: all .1s ease-in-out;
+  }
+  
+  .form-label-group input::-webkit-input-placeholder {
+    color: rgba(51,51,51,0.5);
+  }
+  
+  .form-label-group input:-ms-input-placeholder {
+    color: rgba(51,51,51,0.5);
+  }
+  
+  .form-label-group input::-ms-input-placeholder {
+    color: rgba(51,51,51,0.5);
+  }
+  
+  .form-label-group input::-moz-placeholder {
+    color: rgba(51,51,51,0.5);
+  }
+  
+  .form-label-group input::placeholder {
+    color: rgba(51,51,51,0.5);
+  }
+  
+   
+  .form-label-group input:not(:placeholder-shown) ~ label {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    font-size: 12px;
+    color: rgba(51,51,51,0.5);
+  }
+
+  .btn-lg,
+  .form-control {
+    border-radius: 0;
+  }
+
+  .btn-primary {
+    background-color: #333333;
+    border-color: #333333;
+  }
+  .btn-primary:hover {
+    background-color: #555555;
+    border-color: #555555;
+  }
+  .form-signin {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+  }
+
+  /* Fallback for Edge
+  -------------------------------------------------- */
+  @supports (-ms-ime-align: auto) {
+    .form-label-group > label {
+      display: none;
+    }
+    .form-label-group input::-ms-input-placeholder {
+      color: rgba(51,51,51,0.5);
+    }
+    }
+  
+  
+  /* Fallback for IE
+  -------------------------------------------------- */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .form-label-group > label {
+      display: none;
+    }
+    .form-label-group input:-ms-input-placeholder {
+      color: rgba(51,51,51,0.5);
+    }
+  }
+  
+
+  /* Navbar */
+  #nav-barr{
+      background-color:#ffb302;
+  }
+  .app-title{
+      font-weight:600;
+      color:#333;
+      margin-left:5px;
+  }
