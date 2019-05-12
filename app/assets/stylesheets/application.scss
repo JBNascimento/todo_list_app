@@ -67,6 +67,9 @@
 .btn{
   border-radius:0;
 }
+.complete{
+  font-weight: 500;
+}
 /* Devise Forms */
 
 .forms-in{
@@ -78,9 +81,10 @@
 
  .form-signin {
     width: 100%;
-    max-width: 420px;
-    padding: 15px;
     margin: auto;
+    max-width: 420px;
+    padding: 15px;    
+    margin-top:10% !important;
   }
   
 

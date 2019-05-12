@@ -6,9 +6,13 @@
   <%= link_to favorite_text, favorites_update_path(todo_list: @todo_list), id:'favorite_link', remote: true, :class => "btn btn-warning" %> 
 </h4>
 
-<p style="margin-bottom:60px;">
+<p>
   <strong>Descrição:</strong>
   <%= @todo_list.description %>
+</p>
+<p style="margin-bottom:60px;">
+  <strong>Autor:</strong>
+  <%= @todo_list.user.email %>
 </p>
 
 <div id="todo_items_wrapper">

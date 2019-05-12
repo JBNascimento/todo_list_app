@@ -41,12 +41,15 @@
     </tbody>
 </table>
 <br/>
-<h4>Listas Favoritas</h4>
+<% current_user.favorites.each do |favorite| %>
+  <% if favorite.todo_list.title != nil %>
+      <h4>Listas Favoritas</h4>
+  <% end %>
 
 <table class= "table">
   <thead class="thead-dark">
     <tbody>
-    <% current_user.favorites.each do |favorite| %>
+    
       <tr>
         <td><%= link_to favorite.todo_list.title + " - " + favorite.todo_list.description, favorite.todo_list %> </td> 
       </tr>
