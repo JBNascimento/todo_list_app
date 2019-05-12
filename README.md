@@ -1,24 +1,22 @@
-# README
+# ToDo List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Desenvolvimento de um organizador de listas de tarefas (to-do lists) em Ruby on Rails.
 
-Things you may want to cover:
+## Login
 
-* Ruby version
+O banco de dados já possuí dois usuários para testes:
 
-* System dependencies
+1. ibrahimovic@fut.com : teste123
+2. juniorbaiano@fut.com : teste123
 
-* Configuration
 
-* Database creation
+## Telas
 
-* Database initialization
+### Login
 
-* How to run the test suite
+![alt text](https://i.ibb.co/vjFtQx0/screenshot-localhost-3000-2019-05-12-20-38-16.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Listas
 
-* Deployment instructions
+![alt text](https://i.ibb.co/1X0jpDk/screenshot-localhost-3000-2019-05-12-20-38-54.png)
 
-* ...
