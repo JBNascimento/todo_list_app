@@ -1,6 +1,9 @@
 <%= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
     <% if @todo_list.user == current_user %>
-        <%= f.text_field :content, placeholder: "Nova Tarefa" %>
-        <%= f.submit  "Criar" %>
+    <div class="row">
+         <div class="col-sm-8"><%= f.text_field :content, placeholder: "Nova Tarefa", class: "form-control" %></div>
+        <div class="col-sm-4"> <%= f.submit  "Criar", :class => "btn btn-primary btn-block btn-create-list" %></div>
+    </div>        
+    <br/>       
     <% end %>
 <% end %>

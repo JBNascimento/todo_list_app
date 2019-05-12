@@ -13,20 +13,24 @@
 
   <div class="field">
     <%= form.label :título %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control"  %>
   </div>
 
   <div class="field">
     <%= form.label :descrição %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label "Lista Privada?" %>
+   <strong> <%= form.label "Lista Privada?" %> </strong>
     <%= form.check_box :is_private %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Criar" %>
+  <div class="row">
+    <div class="d-block mx-auto col-md-4">
+      <%= form.submit "Criar",  :class => "btn btn-lg btn-primary btn-block btn-create-list" %>
+    </div>
+  </div>
   </div>
 <% end %>

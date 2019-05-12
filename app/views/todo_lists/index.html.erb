@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
+<br/>
+<h4>Listas de Tarefas</h4>
 
-<h1>Listas de Tarefas</h1>
-
-<table>
-  <thead>
+<table class= "table">
+  <thead class="thead-dark">
     <tr>
       <th>Título</th>
       <th>Descrição</th>
@@ -16,28 +16,48 @@
     <% @todo_lists.each do |todo_list| %>
       <% if !todo_list.is_private? || todo_list.user == current_user %>
         <tr>
-          <td><%= todo_list.title %></td>
+          <td><strong><%= link_to todo_list.title, todo_list %></strong></td>
           <td><%= todo_list.description %></td>
           <td><%= todo_list.user.email %></td>
-          <td><%= link_to 'Exibir', todo_list %></td>
-          
-          <% if todo_list.user == current_user %>
-            <td><%= link_to 'Editar', edit_todo_list_path(todo_list) %></td>
-            <td><%= link_to 'Deletar', todo_list, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-          <% end %>
+                  
+            <td> 
+                <% if todo_list.user == current_user %>
+                    <%= link_to edit_todo_list_path(todo_list) do %>
+                      <i class="fa fa-edit"></i>
+                    <% end %>  
+                 <% end %>
+            </td>
+
+            <td>
+                 <% if todo_list.user == current_user %>
+                  <%= link_to todo_list, method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+                       <i class="fa fa-trash"></i>
+                     <% end %>  
+                  <% end %>
+            </td>
           </tr>
        <% end %>
     <% end %>
     </tbody>
 </table>
+<br/>
+<h4>Listas Favoritas</h4>
 
-<h1>Listas Favoritas</h1>
-
-<% current_user.favorites.each do |favorite| %>
-  <%= link_to favorite.todo_list.title, favorite.todo_list %>  
-<% end %>
-
-
-<br>
-
-<%= link_to 'Criar Nova Lista', new_todo_list_path %>
+<table class= "table">
+  <thead class="thead-dark">
+    <tbody>
+    <% current_user.favorites.each do |favorite| %>
+      <tr>
+        <td><%= link_to favorite.todo_list.title + " - " + favorite.todo_list.description, favorite.todo_list %> </td> 
+      </tr>
+    <% end %>
+    </tbody>
+  </thead>
+</table>
+<br/>
+<br/>
+<div class="row">
+    <div class="d-block mx-auto col-md-4"> 
+       <%= link_to 'Criar Nova Lista', new_todo_list_path,  :class => "btn btn-lg btn-primary btn-block btn-create-list" %>
+    </div>
+</div>

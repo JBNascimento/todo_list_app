@@ -20,10 +20,53 @@
  body {
     font-family: 'Quicksand', sans-serif;
  }
+ a {
+   color:#000000;
+ }
  a:hover {
     background-color: transparent;
     color:#666666;
  }
+ .fa{
+   font-size: 24px !important;
+ }
+ i.fa.fa-edit{
+   margin-top: 2px;
+ }
+ p, td, th {  
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+ }
+
+ .btn-primary:not(:disabled):not(.disabled):active{
+    background-color:#ffb302;
+    border-color:#ffb302;
+ }
+ .btn-primary:focus,
+ .btn-primary:not(:disabled):not(.disabled):active:focus{
+   
+   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5) !important;
+ }
+
+ .btn-create-list{
+   color: #fff;
+   font-weight: 500;
+ }
+
+ .btn-primary:visited{
+   color:#fff;
+ }
+ .todo_item p{
+   font-size:18px;
+ }
+.table_item td{
+   width:33%;
+   font-size:16px;
+}
+ 
+.btn{
+  border-radius:0;
+}
 /* Devise Forms */
 
 .forms-in{

@@ -1,31 +1,62 @@
 <div class="row clearfix">
         <% if todo_item.completed? %>
+          <table class= "table table_item">
+             <div class="todo_item">
+                <tbody>
+                  <tr>
+                     <td style="opacity: 0.5;"><strike><%= todo_item.content %></strike></td>
+                    
+                     <td> 
+                     <% if todo_item.todo_list.user == current_user %>
+                     <div class="complete">
+                         <%= link_to "Marcar como não concluído ", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+                     </div>
+                     <% end %>
+                     </td>  
+                      
+                     <td> 
+                     <% if todo_item.todo_list.user == current_user %>
+                     <div class="trash">
+                     <%= link_to  todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Você tem certeza que deseja excluir?"} do %>
+                        <i class="fa fa-trash"></i>
+                    <% end %>
+                     </div>
+                     <% end %>
+                     </td>
+                   </tr>
+                </tbody>
+              </div>
+           </table>
 
-            <div class="todo_item">
-                <p style="opacity: 0.5;"><strike><%= todo_item.content %></strike></p>
-            </div>
+        <% else %>
             
-            <% if todo_item.todo_list.user == current_user %>
+            <table class= "table table_item">
+                 <div class="todo_item">
+                   <tbody>
+                     <tr>
+                        <td><%= todo_item.content %></td>
+                        <td> 
+                        <% if todo_item.todo_list.user == current_user %>
+                        <div class="complete">
+                            <%= link_to "Marcar como concluído ", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+                        </div>
+                        <% end %>
+                        </td>
 
-                <div class="complete">
-                    <%= link_to "Marcar como não concluído", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
-                </div>
+                        <td> 
+                        <% if todo_item.todo_list.user == current_user %>
+                        <div class="trash">
+                            <%= link_to  todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Você tem certeza que deseja excluir?"} do %>
+                                <i class="fa fa-trash"></i>
+                            <% end %>
+                        </div>
+                        <% end %>
+                        </td>
 
-                <div class="trash">
-                    <%= link_to "Deletar", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Você tem certeza que deseja excluir?"} %>
-                </div>
-            <% end %>
-            <% else %>
-            <div class="todo_item">
-                <p><%= todo_item.content %></p>
-            </div>
-            <% if todo_item.todo_list.user == current_user %>
-                <div class="complete">
-                    <%= link_to "Marcar como concluído", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
-                </div>
-                <div class="trash">
-                    <%= link_to "Deletar", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Você tem certeza que deseja excluir?"} %>
-                </div>
-            <% end %>
+                     </tr>
+                    </tbody>
+                    </div>
+                 </table>           
+            
         <% end %>
 </div>
