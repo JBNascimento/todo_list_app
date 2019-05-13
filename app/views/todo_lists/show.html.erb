@@ -10,9 +10,17 @@
   <strong>Descrição:</strong>
   <%= @todo_list.description %>
 </p>
-<p style="margin-bottom:60px;">
+<p>
   <strong>Autor:</strong>
   <%= @todo_list.user.email %>
+</p>
+<p style="margin-bottom:60px;">
+  <strong>Tipo:</strong>
+  <% if @todo_list.is_private %>
+      <span style="color: red;">Lista Particular</span>
+  <% else %>
+      <span style="color: green;">Lista Pública</span>
+  <% end %>
 </p>
 
 <div id="todo_items_wrapper">
